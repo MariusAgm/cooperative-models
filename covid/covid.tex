@@ -1,0 +1,54 @@
+\documentclass[11pt, oneside]{article}
+\usepackage{geometry}
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+
+%SetFonts
+
+%SetFonts
+
+
+\title{Cooperación Internacional de efectos económicos de la propagación de una enfermedad}
+\author{Mario A. García-Meza\\ César Gurrola-Ríos \\ Julieta E. Sánchez-Cano}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\abstract{Se realiza una aplicación de teoría de juegos diferenciales cooperativos para la determinación de los parámetros de control que una cooperación entre naciones debe de aplicar en gasto público de salud ante la aparición de un problema conjunto.}
+
+\section{Introducción}
+
+La aparición de COVID-19 ha representado un reto a nivel internacional de salud en el que la cooperación es indispensable. Si los países desean disminuír lo más posible los costos provocados por la transmisión de la enfermedad, es necesario que exista transferencia de información. Pero tambien los gastos en salud que asume un país afectan de manera directa a los demás países al incrementar los riesgos de contagio debidos a la interacción.
+
+\section{Formulación de un juego diferencial}
+
+Considere un juego diferencial de $N$ países $\Gamma(t_0,x_0)$ comenzando en el momento $t_0$ en el tiempo con un estado inicial constante $x_0$ y una duración de $T-t_0$. Aquí, $T$ es una variable aleatoria con función de distribución acumulada (FDA) $F(t)$, donde $t\in[t_0,\infty)$ es el momento del tiempo en el que el juego termina. La FDA se asume ser una función contínua no decreciente que satisface
+
+\begin{enumerate}
+	\item $F(t_0) = 0$,
+	\item $\lim_{t\to\infty}F(t)=1$
+\end{enumerate}
+
+Adicionalmente, existe una función contínua casi seguramente $f(t) = F'(t)$, llamada la función de densidad tal que
+
+\begin{equation}
+	F(t) = \int_{t_0}^t f(\tau)d\tau \qquad t \in [t_0,\infty]
+\end{equation}
+
+Permitamos que la dinámica del sistema sea descrita por la siguiente ecuación diferencial ordinaria:
+\begin{equation}
+	\dot{x} = g(x, u_1,\dots,u_N), \quad x\in\mathbb{R}^m, u_i \in U\in \mbox{comp}(\mathbb{R}), x(t_0) = x_0
+\end{equation}
+donde $g : \mathbb{R}^m\times \mathbb{R}^N \to \mathbb{R}^m$ es una función valuada en vector que satisface los requisitos estándar de existencia y unicidad (cite).
+
+El pago instantáneo del jugador $i$ en el momento $\tau$, $\tau \in [t_0,\infty)$ se ha definido como $h_i(x(\tau), u_i(\tau))$.
+
+
+\end{document}  
