@@ -11,6 +11,8 @@
 
 %SetFonts
 
+%\newcommand{\eu}{\end{env}}
+
 %SetFonts
 
 
@@ -48,7 +50,58 @@ Permitamos que la dinámica del sistema sea descrita por la siguiente ecuación 
 \end{equation}
 donde $g : \mathbb{R}^m\times \mathbb{R}^N \to \mathbb{R}^m$ es una función valuada en vector que satisface los requisitos estándar de existencia y unicidad (cite).
 
-El pago instantáneo del jugador $i$ en el momento $\tau$, $\tau \in [t_0,\infty)$ se ha definido como $h_i(x(\tau), u_i(\tau))$.
+El pago instantáneo del jugador $i$ en el momento $\tau$, $\tau \in [t_0,\infty)$ se ha definido como $h_i(x(\tau), u_i(\tau))$. Entonces, el pago esperado del jugador $i$, donde $i = 1,\dots,N$ se evalúa por medio de la igualdad
 
+\begin{equation}
+	K_i(t_0, x, u) = \int_{t_0}^\infty\int_{t_0}^t h_i(x(\tau), u_i(\tau)) d\tau dF(t) = \int_{t_0}^\infty\int_{t_0}^t h_i(x(\tau), u_i(\tau)) d\tau f(t) dt
+\end{equation}
+
+Se define la estrategia óptima en el sentido de Pareto en el juego $\Gamma(t_0,x_0)$ como la $n$-tupla de controles $u^*(t) = (u_1^*, \dots, u_n(t))$ que maximiza el pago esperado conjunto de los jugadores:
+
+\begin{equation}
+	(u_1^*(t)\dots,u_n^*(t)) = {\arg\max}_u \sum_{i=1}^nK_i(t_0,x,u).
+\end{equation}
+
+Por lo tanto, la solución óptima en sentido de Pareto del juego $\Gamma(t_0,x_0)$ es $(x^*(t), u^*(t))$ y el pago total óptimo $V(x_0)$ es
+
+\begin{equation}
+	V(x_0, t_0) = \sum_{i=1}^n K_i(t_0,x^*,u^*) = \sum_{i=1}^n \int_{t_0}^\infty \int_{t_0}^t h_i(x^*(\tau), u_i^*(\tau))d\tau f(t)dt.
+\end{equation}
+
+El juego se divide en subjuegos a lo largo de la trayectoria. Para el conjunto de subjuegos $\Gamma(\vartheta, x^*(\vartheta))$, con $\vartheta > t_0$, que ocurre en la trayectoria óptima $x^*(\vartheta)$ es posible también definir el pago integral total esperado 
+
+\begin{equation}
+	V(x^*(\vartheta), \vartheta) = \sum_{i=1}^n \int_{\vartheta}^\infty \int_{\vartheta}^t h_i(x^*(\tau), u_i^*(\tau))d\tau dF_\vartheta(t),
+\end{equation}
+
+donde $F_\vartheta(t)$ es una función de distribución acumulada condicional definida por
+
+\begin{equation}
+	F_\vartheta(t) = \frac{F(t) - F(\vartheta)}{1 - F(\vartheta)}, \qquad t \in [\vartheta, \infty),
+\end{equation}
+con su respectiva función de densidad condicional
+
+\begin{equation}
+	f_\vartheta(t) = \frac{f(t)}{1 - F(\vartheta)}, \qquad t \in [\vartheta, \infty)
+\end{equation}
+
+
+\section{El modelo}
+
+Consideramos un modelo donde las infecciones por COVID-19 tienen un efecto a nivel mundial. Por simplicidad, asumimos que la tasa de infectados es una variable contínua determinista. Sea $I$ el conjunto de regiones involucradas en el juego de la reducción de externalidades por contagio del virus. Denote el nivel de actividad económica de la región $i (i = 1,\dots,n)$ con $e_i$, donde la actividad económica es un determinante indirecto de la tasa de contagios de la comunidad general. En particular, denote con $S(t)$ al \emph{stock} de personas infectadas con el virus en el momento $t$. Entonces el número de infectados se puede describir por medio de la ecuación diferencial 
+
+\begin{equation}
+	\frac{d S(t)}{dt} = \dot{S}(t) = \sum_{i \in I} e_i(t) - r S(t), \qquad S(0) = S_0,
+\end{equation}
+
+donde $r$ es la tasa de recuperación de los pacientes. Asumimos por simplicidad que esta tasa es la misma en todos los países, aunque existe evidencia de que esta depende mucho de factores como la infraestructura hospitalaria y la capacidad de respuesta del sistema de salud. 
+
+Todos los países buscan minimizar la suma de los costos tanto de los esfuerzos de contención por distanciamiento social como los daños económicos y de pérdidas humanas que conlleva la enfermedad. Denote por $C_(e_i)$ el costo de mantener el nivel de actividad económica en $e_i$ debido a medidas como distanciamiento social, y $D_i(S)$ es el costo de los daños de la enfermedad. Note que el nivel de contagio mundial lleva a un nivel de costo diferente para cada país. Asumimos que ambas funciones son contínuamente diferenciables y convexas, con $C'(e_i) < 0$ y $D'(S) >$.
+
+El problema de optimización del país $i$ está determinado por
+
+\begin{equation}
+	\min W_i(e,S) = \int_0^\infty \ensuremath{\mathrm{e}}^{\rho t}\{C_i(e_i) + D_i(S)\} dt
+\end{equation}
 
 \end{document}  
