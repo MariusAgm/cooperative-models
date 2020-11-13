@@ -6,12 +6,17 @@
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
-\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
+
+% Set Environments
+\newtheorem{definition}{Definición}
 
 %SetFonts
 
-%\newcommand{\eu}{\end{env}}
+\newcommand{\eu}{\ensuremath{\mathrm{e}}}
+\newcommand{\du}{\ensuremath{\mathrm{d}}}
 
 %SetFonts
 
@@ -26,6 +31,14 @@
 \abstract{Se realiza una aplicación de teoría de juegos diferenciales cooperativos para la determinación de los parámetros de control que una cooperación entre naciones debe de aplicar en gasto público de salud ante la aparición de un problema conjunto.}
 
 \section{Introducción}
+
+% What do we do and why is it relevant
+The role of a government in situations where externalities are present has become the subject of intense discussion in light of the COVID-19 outbreak in 2020. There are at least two big areas where a government is accountable when an event of such magnitude occurs: health policy and economics. Unfortunately, there seems to be a tradeoff to be considered: closing down the economy for the sake of health immediately hurts the economy.
+
+Even though there is evidence that such tradeoff does not exist \cite{Correia}, the immediate consequences do not make that evident to most policymakers. Further, there might be political incentives for playing down the effects of an outbreak in political discourse and keep the economy open.
+
+In this article we 
+
 
 La aparición de COVID-19 ha representado un reto a nivel internacional de salud en el que la cooperación es indispensable. Si los países desean disminuír lo más posible los costos provocados por la transmisión de la enfermedad, es necesario que exista transferencia de información. Pero tambien los gastos en salud que asume un país afectan de manera directa a los demás países al incrementar los riesgos de contagio debidos a la interacción.
 
@@ -86,6 +99,10 @@ con su respectiva función de densidad condicional
 \end{equation}
 
 
+\section{Los efectos de una pandemia en la economía}
+
+Lorem ipsum
+
 \section{El modelo}
 
 Consideramos un modelo donde las infecciones por COVID-19 tienen un efecto a nivel mundial. Por simplicidad, asumimos que la tasa de infectados es una variable contínua determinista. Sea $I$ el conjunto de regiones involucradas en el juego de la reducción de externalidades por contagio del virus. Denote el nivel de actividad económica de la región $i (i = 1,\dots,n)$ con $e_i$, donde la actividad económica es un determinante indirecto de la tasa de contagios de la comunidad general. En particular, denote con $S(t)$ al \emph{stock} de personas infectadas con el virus en el momento $t$. Entonces el número de infectados se puede describir por medio de la ecuación diferencial 
@@ -96,12 +113,97 @@ Consideramos un modelo donde las infecciones por COVID-19 tienen un efecto a niv
 
 donde $r$ es la tasa de recuperación de los pacientes. Asumimos por simplicidad que esta tasa es la misma en todos los países, aunque existe evidencia de que esta depende mucho de factores como la infraestructura hospitalaria y la capacidad de respuesta del sistema de salud. 
 
-Todos los países buscan minimizar la suma de los costos tanto de los esfuerzos de contención por distanciamiento social como los daños económicos y de pérdidas humanas que conlleva la enfermedad. Denote por $C_(e_i)$ el costo de mantener el nivel de actividad económica en $e_i$ debido a medidas como distanciamiento social, y $D_i(S)$ es el costo de los daños de la enfermedad. Note que el nivel de contagio mundial lleva a un nivel de costo diferente para cada país. Asumimos que ambas funciones son contínuamente diferenciables y convexas, con $C'(e_i) < 0$ y $D'(S) >$.
+Todos los países buscan minimizar la suma de los costos tanto de los esfuerzos de contención por distanciamiento social como los daños económicos y de pérdidas humanas que conlleva la enfermedad. Denote por $C_(e_i)$ el costo de disminuir el nivel de actividad económica en $e_i$ debido a medidas como distanciamiento social, y $D_i(S)$ es el costo de los daños de la enfermedad. Note que el nivel de contagio mundial lleva a un nivel de costo diferente para cada país. Asumimos que ambas funciones son contínuamente diferenciables y convexas, con $C'(e_i) < 0$ y $D'(S) >$.
 
 El problema de optimización del país $i$ está determinado por
 
 \begin{equation}
-	\min W_i(e,S) = \int_0^\infty \ensuremath{\mathrm{e}}^{\rho t}\{C_i(e_i) + D_i(S)\} dt
+	\min W_i(e,S) = \int_0^\infty \ensuremath{\mathrm{e}}^{\rho t}\{C_i(e_i) + D_i(S)\} dt.
 \end{equation}
+
+En otras palabras, cada país tiene como objetivo minimizar los costos que provienen de la reducción en la actividad económica (denotada por el vector $e = (e_1,\dots,e_n)$ y los costos económicos causados directamente por la enfermedad. Para efectos de simplicidad en la notación, se está dejando de lado el elemento del tiempo.
+
+El costo denotado por $C_i(\cdot)$ incluye los costos derivados de la disminución de actividad económica debida a medidas de distanciamiento social y cuarentenas. Esto incluye la pérdida de ingresos y de consumo de personas cuyo trabajo no se puede realizar a distancia y que pierden su empleo de manera temporal o definitiva \cite{sdffsadaf}. También se incluye en esta medida el costo de oportunidad derivado de los cuidados en el hogar, producto de el cierre de las escuelas y centros de cuidado. Note que la convexidad de $C_i(\cdot)$ implica que el costo marginal de las medidas de distanciamiento social son mayores ante bajos niveles de distanciamiento, pero este disminuye para niveles mayores de distanciamiento. Existe evidencia que soporta este supuesto \cite{evidencia}.
+
+La función $D_i(S)$ incluye los costos de salud pública implicados en el combate directo a la enfermedad, pero también puede incluir otras externalidades, cómo el costo agregado de salud en el futuro por los pacientes que no están siendo atendidos \cite{alguien}. También puede incluirse el costo de oportunidad de quienes no están trabajando debido a la enfermedad o al cuidado de personas con enfermedad \cite{}.
+ 
+ 
+Naturalmente, si se tratara un problema de decisiones individuales sin externalidades, este sería un problema de optimización simple en el que se toma en cuenta la balanza de costos y beneficios para la toma de decisiones. Sin embargo, cuando el problema llega a convertirse en una pandemia, es necesario considerar las decisiones de los demás actores. En este caso, consideramos una metodología de teoría de juegos cooperativa. Esto implica que la solución que se obtenga de la misma debe de cumplir con ciertas características que permitan la estabilidad del sistema. En particular, hacemos uso del valor de Shapley \cite{shapley} como concepto de solución de este problema.
+
+El valor de Shapley proporciona una distribución justa de los costos con la ventaja de ser una respuesta única y puede representar una asignación consistente en el tiempo \cite{Petrosjan}.
+
+Sea la dupla $(S,t)$ el estado del juego en el momento $t$. Esto significa que podemos representar con $\Gamma(S,t)$ al subjuego que comienza en el momento $t$ con un nivel $S$ de personas infectadas. Denotamos con $S^I$ la trayectoria de infección acumulada bajo cooperación total, por lo que $\Gamma(S^I,t)$ denota a un subjuego que comienza bajo una trayectora de cooperación absoluta.
+
+Sea $K \subseteq I$ una coalición de jugadores que cooperan. Se define la \emph{función característica} de una coalición en un subjuego como el costo mínimo y se denota como $v(K,S,t)$. Por ejemplo, $v(I,S,0)$ sería la forma de denotar el costo mínimo total asignado bajo cooperación total.
+
+El valor de Shapley del subjuego $\Gamma(S,t)$ depende de la función característica y se denota por $\varphi(v,S,t) = (\varphi_1(v,S,t),\dots,\varphi_n(v,S,t))$. Para obtener soluciones estables en el tiempo se requiere definir un proceso de distribución de asignaciones. Para lograr esto, definimos a $\beta_i(t)$ el costo asignado al jugador $i$ en el instante $t$ y definimos el vector $\beta(t) = (\beta_1(t),\dots, \beta_n(t))$.
+
+\begin{definition}
+El vector $\beta(t) = (\beta_1(t),\dots, \beta_n(t))$ es un \emph{proceso de distribución de asignaciones} (PDA) si 
+
+\begin{equation}
+	\varphi_i(v,S,0) = \int_0^\infty \eu^{-\rho t} \beta_i(t) \du t, \qquad  i = 1,\dots,n.
+\end{equation}
+\end{definition}
+
+La forma de interpretar esta definición es que una función $\beta_i(t)$ constituye una PDA si esta descompone en el tiempo el costo total descontado del jugador $i$ dado por el valor de Shapley para el juego total $\Gamma(S,0)$. Esto se podría leer como que la suma de costos instantáneos descontados es igual a $\varphi_i(v,S,0)$.
+
+\begin{definition}\label{tcIDP}
+El vector $\beta(t) = (\beta_1(t),\dots, \beta_n(t))$ es un PDA consistente en el tiempo si en $(S^I, t), \forall t \in [0,\infty)$ se da la siguiente condición
+\begin{equation}
+	\varphi_i(v,S,0) = \int_0^t \eu^{-\rho t} \beta_i(\tau) \du \tau+ \eu^{-\rho t} \varphi(v, S^I, t)
+\end{equation}
+\end{definition}
+
+Para comprender la condición presentada por la definición \ref{tcIDP}, considere cualquier momento $t$ del juego en el que los jugadores desean renegociar los acuerdos realizados al inicio dentro de la gran coalición. El estado del juego es, por lo tanto, $(S^I,t)$, y a todos los jugadores se les ha estado asignando la suma de los costos descontados correspondientes a la primera parte del lado derecho de la ecuación. En el caso de que este jugador decida jugar de manera cooperativa en el subjuego $\Gamma(S^I, t)$, entonces tendría que recibir su componente del valor de Shapley. Este se encuentra representado por la segunda parte del lado derecho de la ecuación \eqref{tcIDP}.
+
+Encontrar un PDA $\beta(t) = (\beta_1(t), \dots, \beta_n(t))$ tal que se de la condición de la ecuación \eqref{tcIDP} implica la existencia de un acuerdo que es consistente en el tiempo. En la siguiente sección mostramos el procedimiento que usamos para la obtención del resultado.
+
+\section{Obtención de un PDA consistente en el tiempo}
+Nuestro objetivo inicial es la obtención de la función de valor del juego. Esto requiere el cálculo de los costos mínimos para cada uno de los agentes, la gran coalición y cada una de las sub-coaliciones que se pueden generar. Esto permitirá generar el valor de Shapley y calcular las funciones $\beta_i(t)$ para cada uno de los jugadores.
+
+El primer paso es el cálculo del costo mínimo para la gran coalición. Este es el problema mas simple, pues se trata a la suma de todos los costos de los agentes como un solo problema de programación dinámica, sujeta a la dinámica de la acumulación de casos.
+
+\begin{align}
+	\min &\qquad \sum_{i\in I} W_i(e,S,t) = \sum_{i\in I} \int_t^\infty \eu^{-\rho(\tau - t)}
+	\{
+		C_i(e_i) + D_i(S)
+	\} \du \tau \\
+	\mbox{t.q. } &\qquad \dot{S}  = \sum_{i \in I} e_i - \delta S, \qquad S(t) = S^I(t)
+\end{align}
+
+Sea $V(I,S, t)$ la función de valor de Bellman del problema estándar de programación dinámica, se acuerdo al teorema XXXX en XXXX, esta debe de cumplir con la ecuación de Bellman
+
+\begin{equation}\label{bellmanCoalition}
+	\rho V(I,S,t) = \min \left\{
+		\sum_{i=1}^n \left(
+		\frac{\gamma}{2}[e_i - \bar{e}_i]^2 + \pi S
+		\right) + V'(I,S,t) \left[
+			\sum_{i=1}^n e_i(t) - \delta S(t)
+		\right]
+	\right\}
+\end{equation}
+
+Para encontrar la estrategia óptima que los agentes deben tomar en conjunto, es necesario diferenciar el lado derecho de la ecuación con respecto a $e_i$ igualando a cero
+
+\begin{equation}
+	e_i^I = \bar{e}_i - \frac{1}{\gamma} V'(I,S,t).
+\end{equation}
+
+Sustituyendo $e_i^I$ en \eqref{bellmanCoalition},
+
+\begin{equation}\label{bellmanCoalition}
+	\rho V(I,S,t) = \min \left\{
+		\sum_{i=1}^n \left(
+		\frac{\gamma}{2}[e_i - \bar{e}_i]^2 + \pi S
+		\right) + V'(I,S,t) \left[
+			\sum_{i=1}^n e_i(t) - \delta S(t)
+		\right]
+	\right\}
+\end{equation}
+
+
+\bibliographystyle{unsrt}
+\bibliography{references}
 
 \end{document}  
