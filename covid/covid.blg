@@ -3,50 +3,52 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: covid.aux
 The style file: unsrt.bst
 Database file #1: references.bib
+Warning--entry type for "EC-COVID" isn't style-file defined
+--line 19 of file references.bib
 Warning--I didn't find a database entry for "sdffsadaf"
 Warning--I didn't find a database entry for "evidencia"
 Warning--I didn't find a database entry for "alguien"
 Warning--I didn't find a database entry for "shapley"
 Warning--I didn't find a database entry for "Petrosjan"
-You've used 1 entry,
+You've used 3 entries,
             1791 wiz_defined-function locations,
-            457 strings with 3782 characters,
-and the built_in function-call counts, 180 in all, are:
-= -- 12
-> -- 11
+            466 strings with 4121 characters,
+and the built_in function-call counts, 427 in all, are:
+= -- 31
+> -- 19
 < -- 0
-+ -- 4
-- -- 3
-* -- 10
-:= -- 39
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 1
++ -- 8
+- -- 5
+* -- 14
+:= -- 80
+add.period$ -- 8
+call.type$ -- 3
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 8
-empty$ -- 15
-format.name$ -- 3
-if$ -- 35
+cite$ -- 3
+duplicate$ -- 21
+empty$ -- 47
+format.name$ -- 5
+if$ -- 91
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 1
-pop$ -- 3
+int.to.str$ -- 3
+missing$ -- 2
+newline$ -- 17
+num.names$ -- 3
+pop$ -- 13
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 3
+skip$ -- 10
 stack$ -- 0
 substring$ -- 0
-swap$ -- 1
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 1
-width$ -- 2
-write$ -- 12
-(There were 5 warnings)
+while$ -- 3
+width$ -- 4
+write$ -- 30
+(There were 6 warnings)

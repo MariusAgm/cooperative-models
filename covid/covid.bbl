@@ -4,6 +4,17 @@
 Sergio Correia, Stephan Luck, and Emil Verner.
 \newblock Pandemics depress the economy, public health interventions do not:
   Evidence from the 1918 flu.
-\newblock {\em Public Health Interventions do not: Evidence from the}, 1918.
+\newblock {\em Public Health Interventions do not: Evidence from the}, 2020.
+
+\bibitem{EC-COVID}
+European Commision.
+\newblock Council recomendations on a coordinated approach of free movement in
+  response to the covid-19 pandemic, 2020.
+
+\bibitem{SSA-NN}
+Secretar{\'\i}a de~Salud.
+\newblock Acuerdo por el que se establecen los lineamientos t{\'e}cnicos
+  espec{\'\i}ficos para la reapertura de las actividades econ{\'o}micas.
+\newblock {\em Diario Oficial de la Federaci{\'o}n}, 2020.
 
 \end{thebibliography}

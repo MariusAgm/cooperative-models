@@ -37,10 +37,26 @@ The role of a government in situations where externalities are present has becom
 
 Even though there is evidence that such tradeoff does not exist \cite{Correia}, the immediate consequences do not make that evident to most policymakers. Further, there might be political incentives for playing down the effects of an outbreak in political discourse and keep the economy open.
 
-In this article we 
+In this paper we explore the incentives given by this tradeoff and the policy decisions that have to be made by agents that need to cooperate in order to minimize the health and economics costs given by an exogenous virus outbreak. We consider as an example the case of federalism and states within a country with variable policies. We can find such a case in the United States, with a general mandate but differing policies. More importantly, there is free mobility within states that require some degree of cooperation within states. Such scenario is also present in the European Union, where each country can adopt their individual policies, but free mobility cannot be easily overriden in order to enforce such policies (cf. \cite{EC-COVID}).
+
+Naturally, the ideas of the model apply to other countries and regions that face the same situation, where a cooperative set of rules is needed. For example, Mexico adopted a nationwide policy at the beginning of the outbreak, but by the end of May announced that the health policies should be implemented by states \cite{SSA-NN}. As we will see, the nature of the incentives at hand make this decision less than optimal and may be improved by assuming a nationwide mandate.
+
+Our approach involves a cooperative differential game with $n$ agents. An agent in this model is a decision maker, which can be thought of as a state or local government. Each of these agents have to decide its optimal policy choice in order to minimize negative outcomes. A discussion about the economics of pandemics, public policy and the tradeoffs to be considered is presented in section \ref{Policy} while the details of our model are described in section \ref{model}.
+
+The computation of the solution is presented in section \ref{IDP}, along with a detailed description of the method in which we arrive at the conclusions presented. Section \ref{Conclude} provide a discussion of the insights that our analysis yield and how they can be informative for policymakers that face the kind of incentives described by this article.
 
 
-La aparición de COVID-19 ha representado un reto a nivel internacional de salud en el que la cooperación es indispensable. Si los países desean disminuír lo más posible los costos provocados por la transmisión de la enfermedad, es necesario que exista transferencia de información. Pero tambien los gastos en salud que asume un país afectan de manera directa a los demás países al incrementar los riesgos de contagio debidos a la interacción.
+\section{The policy implications of a virus outbreak}\label{Policy}
+% Facemasks
+Since the 1918 Spanish Flu, we as humanity have not face a similar challenge as the one that COVID-19 poses. A series of policy questions arise under these circumstances: should face masks be mandatory? how long and how strict should a lockdown be?
+
+
+\section{The model} \label{model}
+
+
+\section{Stability of cooperation}\label{IDP}
+
+\section{Concluding remarks} \label{Conclude}
 
 \section{Formulación de un juego diferencial}
 
@@ -103,7 +119,7 @@ con su respectiva función de densidad condicional
 
 Lorem ipsum
 
-\section{El modelo}
+\section{El modelo} 
 
 Consideramos un modelo donde las infecciones por COVID-19 tienen un efecto a nivel mundial. Por simplicidad, asumimos que la tasa de infectados es una variable contínua determinista. Sea $I$ el conjunto de regiones involucradas en el juego de la reducción de externalidades por contagio del virus. Denote el nivel de actividad económica de la región $i (i = 1,\dots,n)$ con $e_i$, donde la actividad económica es un determinante indirecto de la tasa de contagios de la comunidad general. En particular, denote con $S(t)$ al \emph{stock} de personas infectadas con el virus en el momento $t$. Entonces el número de infectados se puede describir por medio de la ecuación diferencial 
 
