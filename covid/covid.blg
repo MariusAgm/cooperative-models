@@ -1,54 +1,57 @@
 This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: covid.aux
-The style file: unsrt.bst
+The style file: apalike.bst
 Database file #1: references.bib
+Warning--entry type for "gamlich2020" isn't style-file defined
+--line 20 of file references.bib
 Warning--entry type for "EC-COVID" isn't style-file defined
---line 19 of file references.bib
+--line 64 of file references.bib
 Warning--I didn't find a database entry for "sdffsadaf"
 Warning--I didn't find a database entry for "evidencia"
 Warning--I didn't find a database entry for "alguien"
 Warning--I didn't find a database entry for "shapley"
 Warning--I didn't find a database entry for "Petrosjan"
-You've used 3 entries,
-            1791 wiz_defined-function locations,
-            466 strings with 4121 characters,
-and the built_in function-call counts, 427 in all, are:
-= -- 31
-> -- 19
-< -- 0
-+ -- 8
-- -- 5
-* -- 14
-:= -- 80
-add.period$ -- 8
-call.type$ -- 3
-change.case$ -- 3
-chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 21
-empty$ -- 47
-format.name$ -- 5
-if$ -- 91
-int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 2
-newline$ -- 17
-num.names$ -- 3
-pop$ -- 13
+Warning--empty journal in Walker2020
+You've used 8 entries,
+            1935 wiz_defined-function locations,
+            516 strings with 5162 characters,
+and the built_in function-call counts, 2719 in all, are:
+= -- 250
+> -- 140
+< -- 6
++ -- 50
+- -- 48
+* -- 219
+:= -- 516
+add.period$ -- 21
+call.type$ -- 8
+change.case$ -- 61
+chr.to.int$ -- 8
+cite$ -- 9
+duplicate$ -- 100
+empty$ -- 163
+format.name$ -- 58
+if$ -- 500
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 7
+newline$ -- 40
+num.names$ -- 24
+pop$ -- 57
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 62
 quote$ -- 0
-skip$ -- 10
+skip$ -- 84
 stack$ -- 0
-substring$ -- 0
-swap$ -- 3
-text.length$ -- 0
+substring$ -- 120
+swap$ -- 6
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 3
-width$ -- 4
-write$ -- 30
-(There were 6 warnings)
+type$ -- 46
+warning$ -- 1
+while$ -- 18
+width$ -- 0
+write$ -- 94
+(There were 8 warnings)

@@ -48,8 +48,24 @@ The computation of the solution is presented in section \ref{IDP}, along with a 
 
 \section{The policy implications of a virus outbreak}\label{Policy}
 % Facemasks
-Since the 1918 Spanish Flu, we as humanity have not face a similar challenge as the one that COVID-19 poses. A series of policy questions arise under these circumstances: should face masks be mandatory? how long and how strict should a lockdown be?
+Since the 1918 Spanish Flu, we as humanity have not faced a similar challenge as the one that COVID-19 poses, if left unchecked and without any reaction from governments or the general public, the virus SARS-Cov-2 was estimated to be responsible for the death of 2.2 million people only in the United States \cite{Walker2020}. A series of policy questions arise under these circumstances: should face masks be mandatory? how long and how strict should a lockdown be? What is the right policy on massive testing, contact tracing and quarantine subsidies?
 
+In this section we discuss of these policies and the current evidence on their effectivity. Our objective is to highlight the tradeoffs that policymakers face when choosing the appropriate policy response to such a crisis. More importantly, we point out the problems that arise from interdependence between regions and policymakers and the conditions necessary to achieve collaboration.
+
+\subsection{COVID-19: Epidemiology and Economics}
+
+As of October 2020, the COVID-19 pandemic is uncontrolled and a major problem worldwide. While the epidemiological recommendations for control remained unchanged from the beginning of the pandemic (and in fact are the same from the last century), there has been a poor response by policymakers worldwide, with clear exceptions like New Zealand, Vietnam and Mongolia \cite{epiellie}.
+
+These policies include hygiene, social distancing, quarantine/isolation, testing and contact tracing. Unfortunately, most of these measures represent an economic cost since a big part of the economy relies on social contact. The problems get worse considering the intense political polarization. In \cite{makridis2020}, the authors find that heterogeneous beliefs about social distancing and mask mandates is driven primarily by political affiliation in the United States.
+
+Further, there is evidence that the public internalized the idea that lockdowns are largely futile for the control of a pandemic on a community and individual-level actions such as wearing a mask and staying at home are enough \cite{gamlich2020}. Nonetheless, since an infected person represent an externality to others, this is not a problem that can be solved without the use of a regulatory agent (see \cite{Mas-colell}).
+
+
+
+
+\subsection{The need for COVID related economic policy}
+
+While the focus 
 
 \section{The model} \label{model}
 
@@ -58,66 +74,6 @@ Since the 1918 Spanish Flu, we as humanity have not face a similar challenge as 
 
 \section{Concluding remarks} \label{Conclude}
 
-\section{Formulación de un juego diferencial}
-
-Considere un juego diferencial de $N$ países $\Gamma(t_0,x_0)$ comenzando en el momento $t_0$ en el tiempo con un estado inicial constante $x_0$ y una duración de $T-t_0$. Aquí, $T$ es una variable aleatoria con función de distribución acumulada (FDA) $F(t)$, donde $t\in[t_0,\infty)$ es el momento del tiempo en el que el juego termina. La FDA se asume ser una función contínua no decreciente que satisface
-
-\begin{enumerate}
-	\item $F(t_0) = 0$,
-	\item $\lim_{t\to\infty}F(t)=1$
-\end{enumerate}
-
-Adicionalmente, existe una función contínua casi seguramente $f(t) = F'(t)$, llamada la función de densidad tal que
-
-\begin{equation}
-	F(t) = \int_{t_0}^t f(\tau)d\tau \qquad t \in [t_0,\infty]
-\end{equation}
-
-Permitamos que la dinámica del sistema sea descrita por la siguiente ecuación diferencial ordinaria:
-\begin{equation}
-	\dot{x} = g(x, u_1,\dots,u_N), \quad x\in\mathbb{R}^m, u_i \in U\in \mbox{comp}(\mathbb{R}), x(t_0) = x_0
-\end{equation}
-donde $g : \mathbb{R}^m\times \mathbb{R}^N \to \mathbb{R}^m$ es una función valuada en vector que satisface los requisitos estándar de existencia y unicidad (cite).
-
-El pago instantáneo del jugador $i$ en el momento $\tau$, $\tau \in [t_0,\infty)$ se ha definido como $h_i(x(\tau), u_i(\tau))$. Entonces, el pago esperado del jugador $i$, donde $i = 1,\dots,N$ se evalúa por medio de la igualdad
-
-\begin{equation}
-	K_i(t_0, x, u) = \int_{t_0}^\infty\int_{t_0}^t h_i(x(\tau), u_i(\tau)) d\tau dF(t) = \int_{t_0}^\infty\int_{t_0}^t h_i(x(\tau), u_i(\tau)) d\tau f(t) dt
-\end{equation}
-
-Se define la estrategia óptima en el sentido de Pareto en el juego $\Gamma(t_0,x_0)$ como la $n$-tupla de controles $u^*(t) = (u_1^*, \dots, u_n(t))$ que maximiza el pago esperado conjunto de los jugadores:
-
-\begin{equation}
-	(u_1^*(t)\dots,u_n^*(t)) = {\arg\max}_u \sum_{i=1}^nK_i(t_0,x,u).
-\end{equation}
-
-Por lo tanto, la solución óptima en sentido de Pareto del juego $\Gamma(t_0,x_0)$ es $(x^*(t), u^*(t))$ y el pago total óptimo $V(x_0)$ es
-
-\begin{equation}
-	V(x_0, t_0) = \sum_{i=1}^n K_i(t_0,x^*,u^*) = \sum_{i=1}^n \int_{t_0}^\infty \int_{t_0}^t h_i(x^*(\tau), u_i^*(\tau))d\tau f(t)dt.
-\end{equation}
-
-El juego se divide en subjuegos a lo largo de la trayectoria. Para el conjunto de subjuegos $\Gamma(\vartheta, x^*(\vartheta))$, con $\vartheta > t_0$, que ocurre en la trayectoria óptima $x^*(\vartheta)$ es posible también definir el pago integral total esperado 
-
-\begin{equation}
-	V(x^*(\vartheta), \vartheta) = \sum_{i=1}^n \int_{\vartheta}^\infty \int_{\vartheta}^t h_i(x^*(\tau), u_i^*(\tau))d\tau dF_\vartheta(t),
-\end{equation}
-
-donde $F_\vartheta(t)$ es una función de distribución acumulada condicional definida por
-
-\begin{equation}
-	F_\vartheta(t) = \frac{F(t) - F(\vartheta)}{1 - F(\vartheta)}, \qquad t \in [\vartheta, \infty),
-\end{equation}
-con su respectiva función de densidad condicional
-
-\begin{equation}
-	f_\vartheta(t) = \frac{f(t)}{1 - F(\vartheta)}, \qquad t \in [\vartheta, \infty)
-\end{equation}
-
-
-\section{Los efectos de una pandemia en la economía}
-
-Lorem ipsum
 
 \section{El modelo} 
 
@@ -219,7 +175,7 @@ Sustituyendo $e_i^I$ en \eqref{bellmanCoalition},
 \end{equation}
 
 
-\bibliographystyle{unsrt}
+\bibliographystyle{apalike}
 \bibliography{references}
 
 \end{document}  

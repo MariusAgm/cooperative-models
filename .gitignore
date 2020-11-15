@@ -1,2 +1,4 @@
 *.pdf
 *.docx
+*.log
+covid/covid.synctex.gz

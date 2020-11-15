@@ -1,0 +1,60 @@
+\section{Formulación de un juego diferencial}
+
+Considere un juego diferencial de $N$ países $\Gamma(t_0,x_0)$ comenzando en el momento $t_0$ en el tiempo con un estado inicial constante $x_0$ y una duración de $T-t_0$. Aquí, $T$ es una variable aleatoria con función de distribución acumulada (FDA) $F(t)$, donde $t\in[t_0,\infty)$ es el momento del tiempo en el que el juego termina. La FDA se asume ser una función contínua no decreciente que satisface
+
+\begin{enumerate}
+	\item $F(t_0) = 0$,
+	\item $\lim_{t\to\infty}F(t)=1$
+\end{enumerate}
+
+Adicionalmente, existe una función contínua casi seguramente $f(t) = F'(t)$, llamada la función de densidad tal que
+
+\begin{equation}
+	F(t) = \int_{t_0}^t f(\tau)d\tau \qquad t \in [t_0,\infty]
+\end{equation}
+
+Permitamos que la dinámica del sistema sea descrita por la siguiente ecuación diferencial ordinaria:
+\begin{equation}
+	\dot{x} = g(x, u_1,\dots,u_N), \quad x\in\mathbb{R}^m, u_i \in U\in \mbox{comp}(\mathbb{R}), x(t_0) = x_0
+\end{equation}
+donde $g : \mathbb{R}^m\times \mathbb{R}^N \to \mathbb{R}^m$ es una función valuada en vector que satisface los requisitos estándar de existencia y unicidad (cite).
+
+El pago instantáneo del jugador $i$ en el momento $\tau$, $\tau \in [t_0,\infty)$ se ha definido como $h_i(x(\tau), u_i(\tau))$. Entonces, el pago esperado del jugador $i$, donde $i = 1,\dots,N$ se evalúa por medio de la igualdad
+
+\begin{equation}
+	K_i(t_0, x, u) = \int_{t_0}^\infty\int_{t_0}^t h_i(x(\tau), u_i(\tau)) d\tau dF(t) = \int_{t_0}^\infty\int_{t_0}^t h_i(x(\tau), u_i(\tau)) d\tau f(t) dt
+\end{equation}
+
+Se define la estrategia óptima en el sentido de Pareto en el juego $\Gamma(t_0,x_0)$ como la $n$-tupla de controles $u^*(t) = (u_1^*, \dots, u_n(t))$ que maximiza el pago esperado conjunto de los jugadores:
+
+\begin{equation}
+	(u_1^*(t)\dots,u_n^*(t)) = {\arg\max}_u \sum_{i=1}^nK_i(t_0,x,u).
+\end{equation}
+
+Por lo tanto, la solución óptima en sentido de Pareto del juego $\Gamma(t_0,x_0)$ es $(x^*(t), u^*(t))$ y el pago total óptimo $V(x_0)$ es
+
+\begin{equation}
+	V(x_0, t_0) = \sum_{i=1}^n K_i(t_0,x^*,u^*) = \sum_{i=1}^n \int_{t_0}^\infty \int_{t_0}^t h_i(x^*(\tau), u_i^*(\tau))d\tau f(t)dt.
+\end{equation}
+
+El juego se divide en subjuegos a lo largo de la trayectoria. Para el conjunto de subjuegos $\Gamma(\vartheta, x^*(\vartheta))$, con $\vartheta > t_0$, que ocurre en la trayectoria óptima $x^*(\vartheta)$ es posible también definir el pago integral total esperado 
+
+\begin{equation}
+	V(x^*(\vartheta), \vartheta) = \sum_{i=1}^n \int_{\vartheta}^\infty \int_{\vartheta}^t h_i(x^*(\tau), u_i^*(\tau))d\tau dF_\vartheta(t),
+\end{equation}
+
+donde $F_\vartheta(t)$ es una función de distribución acumulada condicional definida por
+
+\begin{equation}
+	F_\vartheta(t) = \frac{F(t) - F(\vartheta)}{1 - F(\vartheta)}, \qquad t \in [\vartheta, \infty),
+\end{equation}
+con su respectiva función de densidad condicional
+
+\begin{equation}
+	f_\vartheta(t) = \frac{f(t)}{1 - F(\vartheta)}, \qquad t \in [\vartheta, \infty)
+\end{equation}
+
+
+\section{Los efectos de una pandemia en la economía}
+
+Lorem ipsum
